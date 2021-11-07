@@ -16,7 +16,7 @@ public class ImageOption extends DialogFragment {
     private Button btnCamera, btnGallery;
 
     public ImageOption() {
-        // Required empty public constructor
+
     }
 
     public static ImageOption newInstance() {
@@ -35,7 +35,7 @@ public class ImageOption extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_image_option, container, false);
         btnCamera = view.findViewById(R.id.btnCamera);
         btnGallery = view.findViewById(R.id.btnGallery);

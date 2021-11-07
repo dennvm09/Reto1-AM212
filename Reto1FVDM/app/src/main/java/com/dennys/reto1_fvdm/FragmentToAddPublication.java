@@ -37,7 +37,7 @@ public class FragmentToAddPublication extends Fragment implements FragmentToShow
     private Publication objPublication;
 
     public FragmentToAddPublication() {
-        // Required empty public constructor
+
     }
 
     public void setListener(OnCreatePublicationListener listener) {
@@ -127,7 +127,7 @@ public class FragmentToAddPublication extends Fragment implements FragmentToShow
             btnEndDate.setText(formatDate(date));
         });
     }
-    private void savePosts() {
+    private void savePublications() {
         Gson gson = new Gson();
         String json = gson.toJson(posts);
         //Local storage

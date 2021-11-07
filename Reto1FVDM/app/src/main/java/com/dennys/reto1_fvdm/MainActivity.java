@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements FragmentToProfile
         navigator = findViewById(R.id.navigator);
 
         loadProfile();
-        loadPosts();
+        loadPublications();
 
 
 
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements FragmentToProfile
         }
     }
 
-    private void loadPosts(){
+    private void loadPublications(){
         SharedPreferences sharedPreferences = getSharedPreferences("MainActivity",MODE_PRIVATE);
         String json = sharedPreferences.getString("posts","NO_OBJ");
         if(!json.equals("NO_OBJ")){
@@ -144,15 +144,15 @@ public class MainActivity extends AppCompatActivity implements FragmentToProfile
         publication.setNameBusiness(profile.getNameBusiness());
         publication.setUriImageBusiness(profile.getUriImageBusiness());
         fragmentToPublications.addPublication(publication);
-        savePosts();
+        savePublications();
         swapFragment(fragmentToPublications,0);
     }
-    private void savePosts() {
+    private void savePublications() {
         publications = fragmentToPublications.getPublications();
         fragmentToMainMap.setPublications(publications);
         Gson gson = new Gson();
         String json = gson.toJson(publications);
-        //Local storage
+
         SharedPreferences sharedPreferences = getSharedPreferences("MainActivity", MODE_PRIVATE);
         sharedPreferences.edit()
                 .putString("posts", json)

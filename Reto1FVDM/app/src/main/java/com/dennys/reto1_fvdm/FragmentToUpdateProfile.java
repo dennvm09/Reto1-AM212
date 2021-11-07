@@ -57,10 +57,10 @@ public class FragmentToUpdateProfile extends Fragment implements ImageOption.OnC
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_to_update_profile, container, false);
 
-        //newProfile = new Profile();
+
 
         nameBusiness = view.findViewById(R.id.lblName);
         descriptionBusiness = view.findViewById(R.id.txtDescription);

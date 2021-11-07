@@ -94,8 +94,8 @@ public class FragmentToMainMap extends Fragment {
         }
     }
 
-    public void setPublications(ArrayList<Publication> posts) {
-        this.publications = posts;
+    public void setPublications(ArrayList<Publication> publications) {
+        this.publications = publications;
     }
 
     public interface OnMainMapListener{

@@ -22,13 +22,13 @@ public class UtilDomi {
 
     @SuppressLint("NewApi")
     public static String getPath(final Context context, final Uri uri) {
-        // check here to KITKAT or new version
+
         final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
         String selection = null;
         String[] selectionArgs = null;
-        // DocumentProvider
+
         if (isKitKat && DocumentsContract.isDocumentUri(context, uri)) {
-            // ExternalStorageProvider
+
             if (isExternalStorageDocument(uri)) {
                 final String docId = DocumentsContract.getDocumentId(uri);
                 final String[] split = docId.split(":");
@@ -42,7 +42,7 @@ public class UtilDomi {
                 }
             }
 
-            // DownloadsProvider
+
             else if (isDownloadsDocument(uri)) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     final String id;
@@ -77,7 +77,7 @@ public class UtilDomi {
 
                                 return getDataColumn(context, contentUri, null, null);
                             } catch (NumberFormatException e) {
-                                //In Android 8 and Android P the id is not a number
+
                                 return uri.getPath().replaceFirst("^/document/raw:", "").replaceFirst("^raw:", "");
                             }
                         }
@@ -105,6 +105,7 @@ public class UtilDomi {
 
 
             }
+
             // MediaProvider
             else if (isMediaDocument(uri)) {
                 final String docId = DocumentsContract.getDocumentId(uri);
@@ -132,7 +133,7 @@ public class UtilDomi {
         }
 
 
-        // MediaStore (and general)
+
         else if ("content".equalsIgnoreCase(uri.getScheme())) {
 
             if (isGooglePhotosUri(uri)) {
@@ -144,9 +145,9 @@ public class UtilDomi {
             }
             if( Build.VERSION.SDK_INT == Build.VERSION_CODES.N)
             {
-                // return getFilePathFromURI(context,uri);
+
                 return getMediaFilePathForN(uri, context);
-                // return getRealPathFromURI(context,uri);
+
             }else
             {
 
@@ -155,7 +156,7 @@ public class UtilDomi {
 
 
         }
-        // File
+
         else if ("file".equalsIgnoreCase(uri.getScheme())) {
             return uri.getPath();
         }
@@ -163,11 +164,7 @@ public class UtilDomi {
         return null;
     }
 
-    /**
-     * Check if a file exists on device
-     *
-     * @param filePath The absolute file path
-     */
+
     private static boolean fileExists(String filePath) {
         File file = new File(filePath);
 
@@ -175,11 +172,6 @@ public class UtilDomi {
     }
 
 
-    /**
-     * Get full file path from external storage
-     *
-     * @param pathData The storage type and the relative path
-     */
     private static String getPathFromExtSD(String[] pathData) {
         final String type = pathData[0];
         final String relativePath = "/" + pathData[1];
@@ -222,7 +214,6 @@ public class UtilDomi {
             int maxBufferSize = 1 * 1024 * 1024;
             int bytesAvailable = inputStream.available();
 
-            //int bufferSize = 1024;
             int bufferSize = Math.min(bytesAvailable, maxBufferSize);
 
             final byte[] buffers = new byte[bufferSize];
@@ -257,7 +248,6 @@ public class UtilDomi {
             int maxBufferSize = 1 * 1024 * 1024;
             int bytesAvailable = inputStream.available();
 
-            //int bufferSize = 1024;
             int bufferSize = Math.min(bytesAvailable, maxBufferSize);
 
             final byte[] buffers = new byte[bufferSize];

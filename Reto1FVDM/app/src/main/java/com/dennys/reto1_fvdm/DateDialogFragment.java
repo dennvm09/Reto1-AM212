@@ -74,7 +74,6 @@ public class DateDialogFragment extends DialogFragment {
         this.listener = listener;
     }
 
-    //Callback
     interface OnDateSelectedListener{
         void onDate(long date);
     }

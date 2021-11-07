@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class FragmentToProfile extends Fragment implements FragmentToUpdateProfile.OnEditProfileListener {
 
-    //State
+
     private Profile profile;
 
     private ImageView image;
@@ -29,7 +29,7 @@ public class FragmentToProfile extends Fragment implements FragmentToUpdateProfi
     private FragmentTransaction ft;
 
     public FragmentToProfile() {
-        // Required empty public constructor
+
         profile = new Profile("Nombre del negocio", "Descripción del negocio", null);
 
     }
@@ -49,7 +49,7 @@ public class FragmentToProfile extends Fragment implements FragmentToUpdateProfi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_to_profile, container, false);
 
         image = view.findViewById(R.id.imgPhotoBusiness);
@@ -102,11 +102,11 @@ public class FragmentToProfile extends Fragment implements FragmentToUpdateProfi
         void swapFragment(Fragment f, int opt);
         void onEditProfile(Profile profile);
     }
-    public void setProfile(Profile profile) {
-        this.profile = profile;
-    }
 
     public Profile getProfile() {
         return profile;
+    }
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 }

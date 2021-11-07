@@ -31,7 +31,6 @@ public class FragmentToPublications extends Fragment implements FragmentToAddPub
 
 
     public FragmentToPublications() {
-        // Required empty public constructor
         adapter = new PublicationAdapter();
         publications = new ArrayList<>();
     }

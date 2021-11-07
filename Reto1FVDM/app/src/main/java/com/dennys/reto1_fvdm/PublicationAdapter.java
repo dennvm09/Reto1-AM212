@@ -51,12 +51,12 @@ public class PublicationAdapter extends RecyclerView.Adapter<PublicationHolder> 
         return publications.size();
     }
 
-    public void addPublication(Publication publication){
-        publications.add(publication);
-    }
-
     public ArrayList<Publication> getPublication() {
         return publications;
+    }
+
+    public void addPublication(Publication publication){
+        publications.add(publication);
     }
 
     public void setPublications(ArrayList<Publication> publications) {
